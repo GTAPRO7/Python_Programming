@@ -15,11 +15,23 @@ class Account:
 	def display_ac_details(self):
 		print("Name: ", self.name)
 		print("Account Number: ", self.ac_num)
-		print("Initail Balance: ", self.bal)
-		print("Final Balance: ", self.bal)
+		print("Current Balance: ", self.bal)
 
+class SavingsAccount(Account):
+
+	def __init__(self, name, bal):
+		super().__init__(name, bal)
+
+	def interest_balance(self):
+		intrst = self.bal * 0.05
+		intrst_int = int(intrst)
+		self.bal += intrst_int
+		print("Balance after interest: ", self.bal)
 
 class CurrentAccount(Account):
+
+	def __init__(self, name, bal):
+		super().__init__(name, bal)
 	
 	def withdrawal_money(self):
 		wid_mon = (input("Please enter the withdrwal amount: "))
@@ -32,9 +44,13 @@ class CurrentAccount(Account):
 		     print("Balance after withdrawal: ",self.bal)
 		
 		
-p1 = CurrentAccount("John", 5000)
+p1 = SavingsAccount("John", 5000)
+p2 = CurrentAccount("Marina", 10000)
 
 p1.deposit_money()
 p1.display_ac_details()
-p1.withdrawal_money()
+p1.interest_balance()
 
+p2.deposit_money()
+p2.display_ac_details()
+p2.withdrawal_money()
