@@ -188,19 +188,24 @@ record.patient_details()
 record.billing_details()
 record.record_details()
 
-			
+print("\nhierarchical Inheritance....................................")
+print()
 
+class Patient:
+	def patient_details(self):
+		print("Patient Name: Ananya")
 
+class Billing(Patient):
+	def billing_details(self):
+		print("Consultaion Fee: 500")
 
+class HospitalRecord(Billing):
+	def record_details(self):
+		print("Hospital Record Generated")
 
+record = HospitalRecord()
 
-
-
-
-
-
-
-
-
-
+record.patient_details()
+record.billing_details()
+record.record_details()
 
