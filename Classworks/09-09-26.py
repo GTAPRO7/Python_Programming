@@ -84,7 +84,9 @@ print("Are SeventhSet and EightSet disjoint? :", EightSet.isdisjoint(SeventhSet)
 ##FrozenSet
 
 frz = frozenset([6,7,8,9,10])
+frz1 = frozenset((6,7,8,9,10))
 print("Union with another set :", frz.union({11,12}))
+print("Union with another set :", frz1.union({11,12}))
 
 ##Create two sets of students, namely javastudents and pythonstudents. ##Write a command for the following
 ##Print students learning Python
